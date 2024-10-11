@@ -1,0 +1,225 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  min-height: 75px;
+}
+
+.header > a h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.header > a h1:hover {
+  color: coral;
+}
+.header nav ul {
+  display: flex;
+  gap: 5px;
+}
+
+.header nav ul li a {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 10px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.header nav ul li a:hover {
+  color: white;
+  background-color: coral;
+}
+
+/* HERO/MAIN */
+.hero {
+  height: 90vh;
+  background: url(../images/lemons.jpg) no-repeat center;
+  background-size: cover; /*faz com que a img fique do tamanho da div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero h2 {
+  font-size: 4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* ANIMAÇÃO SETA */
+.hero::after {
+  content: url(../images/seta_preta.png);
+  position: absolute;
+  height: 35px;
+  bottom: 40px;
+  animation: downarrow 0.5s infinite alternate ease-in-out;
+}
+
+@keyframes downarrow {
+  0% { -webkit-transform: translateY(0); opacity: 0.5;}
+  100% { -webkit-transform: translateY(0.5rem); opacity: 0.9;}
+}
+
+
+/* ABOUT */
+.about {
+  min-height: 100vh;
+  display: grid;
+  grid-template: repeat(2, 70vh) / repeat(2, 1fr);
+}
+
+.about .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 20%;
+}
+
+.about .item h3 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.about .item p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 10% 0;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+.about .item a {
+  font-size: 1.6rem;
+  align-self: start;
+}
+
+.about .item a:hover {
+  font-weight: 700;
+}
+
+.about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about .left {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+
+.services .servico {
+  padding: 70px 20%;
+}
+
+.services .servico:first-child {
+  background-color: lightskyblue;
+}
+.services .servico:last-child {
+  background-color: lightpink;
+}
+
+.services .servico img {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.services .servico h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.services .servico p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.projects img {
+  height: 100%;
+  transition: 0.3s;
+}
+
+.projects a img:hover {
+  opacity: 0.8;
+}
+
+/* FOOTER */
+.footer {
+  background-color: lightgreen;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+}
+
+.footer h4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.footer nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer nav a {
+  font-size: 2rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.footer nav a:hover {
+  font-weight: 700;
+  color: white;
+}
+
+.footer .contatos i {
+  font-size: 2.5rem;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.footer .contatos i:hover {
+  color: white;
+}
+
+@media (max-width: 375px) {
+  .footer nav ul {
+    flex-direction: column;
+  }
+}
